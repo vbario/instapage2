@@ -1,0 +1,49 @@
+Order #*|orderId|*
+*|HTML:cart|*
+
+<div class="footer">
+  <p>Pushable © 2023. All rights reserved.</p>
+  <p><a href="https://pushableapp.com/privacy">Privacy Policy</a> | <a href="https://pushableapp.com/terms">Terms of Service</a></p>
+</div>
+
+
+
+<div class="main main-2 df mb20">
+        <div class="df fdc">
+            <span class="df posrel">
+                <h1 class="hello-pushable">Hello, Pushable.</h1>
+            </span>
+            <p class="tac">Gone are the days of having to use 5 platforms just to get paid.</p>
+            <p class="tac">Sell, fulfill, track and manage all your products and services in one place.</p>
+            <div class="w100p df jcsb aic cards">
+                <div class="one-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/tap-in-7704f.appspot.com/o/Download.svg?alt=media&token=d9c6713a-f6fd-4bed-910d-9d286c175cb9" alt="Download image">
+                    <p>Shop without leaving social media</p>
+                </div>
+                <div class="one-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/tap-in-7704f.appspot.com/o/Website.svg?alt=media&token=f97249f8-64d6-42ee-b0f3-3156f8b6f5e9" alt="Website image">
+                    <p>Empower business owners</p>
+                </div>
+                <div class="one-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/tap-in-7704f.appspot.com/o/Boxes.svg?alt=media&token=2e3343ee-8f51-4253-a228-8c7f5a0acb98" alt="Boxes image">
+                    <p>Sell multiple product types in one purchase</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+        name = newOrder.shipToName
+        phoneNumber = newOrder.shipToPhoneNumber
+        let a = newOrder.shippingAddress
+        if (a) {
+            address = a.address1 + ', ' +
+            (a.address2 ? a.address2 + ', ' : '') +
+            (a.city ? a.city + ', ' : '') +
+            (a.state ? a.state + ', ' : '') +
+            (a.postalCode ? a.postalCode + ', ' : '') +
+            (a.country ? a.country: '')
+        }

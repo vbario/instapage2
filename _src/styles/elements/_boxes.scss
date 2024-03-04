@@ -1,0 +1,28 @@
+.box {
+    border: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 20px rgba(8, 21, 66, .05);
+    box-shadow: 0 0 20px rgba(8, 21, 66, .05);
+    background-color: $color-white;
+}
+
+.top-bar-global {
+}
+
+.top-bar-global, .whole-page-box-global {
+    padding: 20px;
+}
+
+.whole-page-box-global {
+    border: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 20px rgba(8, 21, 66, .05);
+    box-shadow: 0 0 20px rgba(8, 21, 66, .05);
+    background-color: $color-white;
+}

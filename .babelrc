@@ -1,0 +1,34 @@
+{
+  "env": {
+    "production" : {
+      "presets": [
+        ["env", {
+          "modules": false,
+          "targets": {
+            "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+          }
+        }],
+        "stage-2"
+      ],
+      "plugins": ["transform-vue-jsx", "transform-runtime"]
+    },
+    "development": {
+      "presets": [
+        ["env", {
+          "modules": false,
+          "targets": {
+            "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+          }
+        }],
+        "stage-2"
+      ],
+      "plugins": ["transform-vue-jsx", "transform-runtime"]
+    },
+    "test": {
+      "presets": [
+        ["env", { "targets": { "node": "current" }}],
+        "jest"
+      ]
+    }
+  }
+}

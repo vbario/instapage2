@@ -1,0 +1,15 @@
+p {
+    font-weight: 300;
+}
+
+.breadcrumb-other {
+    font-weight: 400;
+    cursor: pointer;
+    color: $color-primary;
+    text-decoration: underline;
+}
+.breadcrumb-separator {
+    font-weight: 400;
+    margin-left: 10px;
+    margin-right: 10px;
+}

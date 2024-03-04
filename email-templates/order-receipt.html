@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Pushable!</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap">
+  <link rel="stylesheet" href="https://www.specialagentapp.com/assets/css/app.css">
+  <style>
+    .button {
+        display: flex;
+        padding: 8px 16px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        border: 1px solid #44D600;
+        background: #44D600;
+        
+        color: #FFF;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 14px; /* 142.857% */
+    }
+    h1 {
+        display: flex;
+        align-items: center;
+    }
+    
+    .df {
+      display: flex;
+    }
+    
+    .fdc {
+      flex-direction: column;
+    }
+    
+    .g20 {
+      gap: 20px
+     }
+    
+    .mt20 {
+      margin-top:20px
+    }
+    
+    .mb20 {
+      margin-bottom:20px
+    }
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: #2e2e2e;
+      background-color: #ffffff;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .logo img {
+      height: 40px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+    .nav li {
+      margin-right: 20px;
+    }
+    .nav a {
+      color: #2e2e2e;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .nav a:hover {
+      color: #4c4c4c;
+    }
+      p {
+          font-size: 14px;
+      }
+    .main {
+      padding: 24px 44px;
+      border-radius: 16px;
+    }
+    .main-2 {
+      padding: 32px 24px 24px;
+    }
+    .header {
+      background-color: #daf7cc;
+      padding: 0;
+    }
+      .header > div {      
+          padding: 24px 44px;
+      }
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .cta {
+      display: inline-block;
+      background-color: #38D5FF;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+    .cta:hover {
+    }
+    .image {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #000;
+    }
+    .footer a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .footer a:hover {
+      color: #6c6c6c;
+    }
+    .mb20 {
+        margin-bottom: 20px;
+    }
+    .exclamation {
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .wun {
+        width: 200px;
+        font-weight: 400;
+    }
+    .hello-pushable {
+        width: 100%;
+        text-align: center;
+        color: #44D600;
+        text-align: center;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px;
+        white-space: nowrap;
+    }
+    .tac {
+        text-align: center;
+    }
+    .g_ {
+        gap: 64px;
+    }
+    .posrel {
+        position: relative;
+    }
+    .one-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: rgba(68, 214, 0, 0.20);
+        gap: 8px;
+        padding: 32px 16px;
+    }
+    .one-card > p {
+        font-weight: 700;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .one-card {
+        margin-right: 16px;
+    }
+    .one-card:last-child {
+        margin-right: none;
+    }
+    
+    ._r > p {
+        margin-bottom: 20px;
+    }
+    ._r > p._m2 {
+        margin-bottom: 10px;
+    }
+    .xl {
+        padding-bottom: 0;
+    }
+    .xl > div:first-child {
+        margin-right: 64px;
+    }
+    .cards {
+        margin-top: 20px;
+    }
+    /* Responsive styles */
+    @media screen and (max-width: 600px) {
+      .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+      }
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav {
+        margin-top: 20px;
+      }
+      .nav li {
+        margin-right: 10px;
+      }
+      .nav a {
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .title {
+        font-size: 20px;
+        margin-bottom: 8px
+      }
+      .subtitle {
+        font-size: 16px;
+      }
+      .cta {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      .image {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .footer {
+        font-size: 12px;
+      }
+      .main {
+                  padding: 16px 16px;
+                  flex-direction: column;
+      }
+      .cards {
+                  flex-direction: column;
+      }
+              .wun {
+                  width: 180px;
+              }
+              .g_ {
+                  gap: 0px;
+              }
+              ._r {
+                  align-items: center;
+              }
+              ._r > p {
+                  margin-bottom: 20px;
+              }
+              
+              .__r {
+                  display: none;
+              }
+              .xl > div:first-child {
+                  margin-right: 0;
+              }
+              .one-card {
+                  margin-right: 0;
+                  margin-bottom: 16px;
+              }
+              .one-card:last-child {
+                  margin-right: 0;
+                  margin-bottom: 0;
+              }
+    }
+    a {
+        text-decoration: none;
+    }
+    .g__ {
+        align-items: center;
+    }
+    .g__ > img:first-child {
+        margin-right: 4px;
+    }
+    .logo img.pushable-wordmark {
+        height: 19px;
+    }
+    .fw400 {
+        font-weight: 400;
+    }
+    ._m1 {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    ._m2 {
+        margin-bottom: 5px;
+    }
+    .simple-hr {
+        width: 100%;
+        background-color: #eee;
+        height: 1px;
+        border: none;
+        margin-top: 20px;
+    }
+    .super-hr {
+        width: 100%;
+        background-color: #bbb;
+        height: 1px;
+        border: none;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .line-item {
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        width:100%;
+        margin-bottom:0;
+    }
+    .line-item > p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .item-title {
+      color: #000;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .item-price {
+        color: #44D600;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .download-file {
+        color: #44D600;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;  
+    }
+      .totals {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+      .totals-line {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .totals-line > p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .totals-line > p:first-child {
+      color: #000;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .totals-line > p:last-child {
+        color: #000;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    
+      .totals-subtotal {
+    }
+      .totals-shipping {
+    }
+      .totals-taxes {
+    }
+    .totals-total > p:first-child, .totals-total > p:last-child {
+        font-size: 18px;
+    }
+    .totals-total > p:last-child {
+        color: #44D600;
+    }
+    .shipping-info-box {
+        display: flex;
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 8px;
+        background-color: #F5F5F5;
+    }
+    .shipping-info-box > p {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    .shipping-info-box > p:first-child {
+        margin-top: 0;
+        margin-bottom: 4px;
+        color: #000;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .shipping-info-box > p:last-child {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #000;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="main header df">
+        
+        <div class="df fdc aifs">
+            <div class="logo">
+                <a href="#" class="df aic g__">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/tap-in-7704f.appspot.com/o/pushable-logo-5.png?alt=media&token=cc782a3d-2a2b-4800-8b92-b1b33a8168ea" alt="Pushable Logo">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/tap-in-7704f.appspot.com/o/pushable.svg?alt=media&token=3749e395-d7c4-42e3-8148-77ace1f6eaac" class="pushable-wordmark" alt="Pushable Wordmark">
+                </a>
+            </div>
+            <h1 class="title">Your order is on its way!</h1>
+            <p class="subtitle">Please see your order details below.</p>
+        </div>
+        <div class="f1 __r"></div>
+        <img src="https://firebasestorage.googleapis.com/v0/b/tap-in-7704f.appspot.com/o/hero-1d.png?alt=media&token=91403b9d-056e-4f86-b8a3-899f778f3acd" alt="Pushable Store Visual">
+        <div class="f1 __r"></div>  
+        
+    </div>
+    <div class="main df aic xl">
+        <div class="df fdc _r">
+            <h4 class="_m1">Thanks for shopping with Pushable!</h4>
+            <p class="fw400 _m2">Your order details are below. Your order Id is #*|orderId|*.</p>
+        </div>
+    </div>
+    
+      
+    <div class="main">
+        <hr class="super-hr"/>
+        *|HTML:cart|*
+    </div>
+      
+    <div class="footer">
+      <p>Happy to have you at Pushable.</p>
+      <p>Pushable © 2023-2024. All rights reserved.</p>
+  </div>
+</body>
+</html>

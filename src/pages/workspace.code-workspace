@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../Downloads/fontawesome-pro-6.0.0-beta2-web"
+		}
+	],
+	"settings": {
+		"workbench.tree.renderIndentGuides": "none"
+	}
+}

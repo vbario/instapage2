@@ -1,0 +1,146 @@
+p, a {
+    font-family: "Avenir";
+    font-weight: 400;
+    color: $color-white;
+}
+
+h1, h2, h3, h4, h5, h6, h7, h8, button {
+    font-family: "Avenir";
+    color: $color-white;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+textarea, input {
+    font-family: "Avenir";
+    // color: $color-white;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+h1.logo-font {
+    font-family: "Avenir";
+    font-weight: 700;
+    letter-spacing: 0em;
+}
+
+a, a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+.text-primary-color {
+    color: $color-primary;
+}
+
+.heading-1 {
+    font-size: 60px;
+    line-height: 1.1em;
+}
+
+.subheading-1 {
+    font-size: 20px;
+    line-height: 1.3em;
+}
+
+// .breadcrumb-other {
+//     font-weight: 400;
+//     cursor: pointer;
+//     color: $color-primary;
+//     text-decoration: underline;
+// }
+// .breadcrumb-separator {
+//     font-weight: 400;
+//     margin-left: 10px;
+//     margin-right: 10px;
+// }
+
+.sidebar-link {
+    cursor: pointer;
+}
+
+.link-1 {
+    color: $color-primary;
+    font-weight: 500;
+}
+
+h5 {
+    color: $color-background-dark;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 36px;
+}
+
+h6 {
+    font-size: 50px;
+    font-weight: 600;
+    color: $color-background-dark;
+    line-height: 1em;
+
+    span {
+        font-size: 50px;
+        font-weight: 400;
+        color: $color-background-dark;
+    }
+}
+
+h7 {
+    font-size: 42px;
+    font-weight: 600;
+    color: $color-background-dark;
+    line-height: 1em;
+}
+
+.text-size-1 {
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.text-dark {
+    color: $color-background-dark;
+}
+
+.text-light-important {
+    color: $color-white !important;
+}
+
+.text-dark-important {
+    color: $color-background-dark !important;
+}
+
+.h1-2 {
+    font-size: 50px;
+}
+
+.header-style {
+    font-size: 19px;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    margin-right: 8px;
+    line-height: 1.1em;
+    color: #888;
+}
+.header-style-back {
+    color: #888;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.header-style-big {
+    font-size: 24px;
+}
+.only-small {
+    display: none;
+}
+.pipe {
+    margin-right: 10px;
+    color: #888;
+}
+@media (max-width: 980px) {
+    .only-small {
+      display: flex;
+    }
+}
+@media (max-width: 979px) {
+    .only-big {
+      display: none;
+    }
+}

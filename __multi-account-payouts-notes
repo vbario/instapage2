@@ -1,0 +1,83 @@
+Write a function that uses the Stripe Node.js SDK. This function should create a payment intent that transfers funds into multiple connected accounts.To create a payment intent that transfers funds into multiple connected accounts using the Stripe Node.js SDK, you'll first need to set up your Stripe environment and then use the `paymentIntents.create` method along with the `transfer_group` and `transfer_data` parameters.
+
+Before you begin, make sure you have:
+1. Installed the Stripe Node.js SDK by running `npm install stripe`
+2. Your Stripe secret key (you can find this in your Stripe Dashboard).
+
+Here is a sample function to create a payment intent with funds distribution:
+
+```javascript
+const stripe = require('stripe')('sk_test_yourSecretKey'); // Replace with your secret key
+
+/**
+ * Create a payment intent and distribute funds to connected accounts.
+ *
+ * @param {number} amount The amount to be charged in the smallest currency unit (e.g., cents for USD).
+ * @param {string} currency The currency of the payment (e.g., 'usd').
+ * @param {Array} connectedAccounts An array of objects containing connected account IDs and amounts.
+ * @returns {Promise<Stripe.PaymentIntent>} A promise that resolves with the created PaymentIntent object.
+ */
+async function createDistributedPaymentIntent(amount, currency, connectedAccounts) {
+  try {
+    // Start by creating a transfer group
+    const transferGroup = `group_${Math.random().toString(36).substr(2, 9)}`;
+
+    // Create an array to store destination charges
+    let destinationCharges = [];
+    
+    for (const account of connectedAccounts) {
+      if(account.amount > 0) {
+        destinationCharges.push({
+          amount: account.amount,
+          destination: account.account_id,
+        });
+      }
+    }
+
+    // Create the PaymentIntent
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: amount,
+      currency: currency,
+      transfer_group: transferGroup,
+      application_fee_amount: 123, // Add an application fee if needed
+      transfer_data: destinationCharges.shift(), // Use only one for now - can't add multiple destinations directly on payment creation
+    });
+
+    // After creating initial PaymentIntent, create separate Transfer objects for remaining destinations using same transfer_group
+    for (const charge of destinationCharges) {
+      await stripe.transfers.create({
+        amount: charge.amount,
+        currency: currency,
+        destination: charge.destination,
+        transfer_group: transferGroup,
+      });
+    }
+
+    return paymentIntent;
+  } catch (error) {
+    console.error("Error creating distributed Payment Intent:", error);
+    throw error;
+  }
+}
+
+// Example usage:
+createDistributedPaymentIntent(
+  1000, 
+  'usd', 
+  [
+   { account_id: 'acct_1Example', amount: 400},
+   { account_id: 'acct_2Example', amount: 600}
+]).then(paymentIntent => {
+   console.log("Created Payment Intent:", paymentIntent.id);
+}).catch(error => {
+   console.error("Failed to create Payment Intent:", error.message);
+});
+```
+
+Please note:
+- You should replace `'sk_test_yourSecretKey'` with your actual Stripe secret key.
+- This code assumes you are allowed to perform direct charges on behalf of connected accounts which requires their authorization through OAuth or other means as per Stripe's Connect platform requirements.
+- Charges are divided manually before creating transfers; direct support for multiple destinations within one charge is not provided by Stripe API at this point. Hence, we first initiate one charge against one connected account and then create additional transfers as needed.
+- You must handle errors properly in production code.
+
+Make sure that all relevant compliance requirements are met when using Stripe Connect's capabilities. Also keep in mind that managing payments and handling sensitive customer data come with legal responsibilities which vary depending on your location and business model. Always consult with a legal professional if unsure about these aspects.

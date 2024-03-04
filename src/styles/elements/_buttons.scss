@@ -1,0 +1,301 @@
+.button-4 {
+  height: 41px;
+  width: 137px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #27C8B3;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  text-align: center;
+}
+.input-1 {
+  border-radius: 29px;
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.button-1 {
+    height: 42px;
+    // width: 144px;
+    border-radius: 29px;
+    background-color: $color-primary;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.21);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: $color-white !important;
+    // color: $color-background-dark !important;
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: 124px;
+  }
+  .button-1-alt {
+    background-color: #000;
+  }
+  .fulfill-button {
+    height: 42px;
+    // width: 144px;
+    border-radius: 29px;
+    border: 1px solid $color-primary;
+    background-color: transparent;
+    color: $color-primary !important;
+    // color: $color-white !important;
+    // background-color: $color-primary;
+    // box-shadow: 0 1px 2px 0 rgba(0,0,0,0.21);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: 124px;
+  } 
+.button-0 {
+    height: 42px;
+    // width: 144px;
+    border-radius: 29px;
+    // background-color: #27C8B3;
+    // border: 2px solid #27C8B3;
+    background-color: transparent;
+    // box-shadow: 0 1px 2px 0 rgba(0,0,0,0.21);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 27px;
+    padding-right: 27px;
+    color: $color-primary !important;
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: 144px;
+  }
+  .button-0 {
+    min-width: 144px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    // width: 144px;
+    // border-radius: 29px;
+    // background-color: #27C8B3;
+    // box-shadow: 0 1px 2px 0 rgba(0,0,0,0.21);
+    // font-family: Inter;
+    // font-size: 14px;
+    // font-weight: bold;
+    // letter-spacing: 0;
+    // line-height: 16px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // padding-left: 27px;
+    // padding-right: 27px;
+    // color: $color-white !important;
+    // cursor: pointer;
+    // white-space: nowrap;
+  }
+  .button-0-alt {
+    box-shadow: none !important;
+    color: $color-background-dark !important;
+    font-weight: 400 !important;
+    font-size: 12px;
+  }
+
+  .button-2 {
+    cursor: pointer;
+    min-width: 144px;
+    height: 42px;
+    // width: 144px;
+    border-radius: 29px !important;
+    background-color: transparent;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.21);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 27px;
+    padding-right: 27px;
+    color: $color-primary !important;
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1px solid $color-primary;
+  }
+
+  .button-3 {
+      cursor: pointer;
+      border: 1px solid $color-primary;
+      border-radius: 18px;
+      height: 27px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      color: $color-primary;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 13px;
+      text-align: center;
+      padding-left: 21px;
+      padding-right: 21px;
+
+      &:hover {
+        background-color: $color-primary !important;
+        color: white;
+      }
+  }
+
+.small-button {
+  background: $color-primary;
+  height: 24px;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 6px;
+}
+
+.button-smaller {
+  height: 30px;
+  border-radius: 15px;
+  min-width: 100px;
+}
+
+
+.mini-button {
+    color: #444;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    border: 1px solid #444;
+}
+
+.regular-button {
+  
+}
+
+.new-product-button {
+  margin-left: 15px;
+}
+
+.button-size-1 {
+  height: 50px;
+  width: 200px;
+  max-width: 200px;
+}
+
+.button-landing-signin-option {
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-white;
+  border-radius: 8px;
+  gap: 8px;
+
+  img {
+    height: 24px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+
+.button-start-signin-option {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-background-dark;
+  border-radius: 30px;
+  gap: 12px;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  p {
+    color: $color-background-dark !important;
+    font-size: 16px;
+  }
+
+  img {
+    height: 18px;
+  }
+}
+
+.big-button {
+  height: 65px;
+  border-radius: 55px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 24px;
+  // color: $color-white !important;
+}
+
+// @media (min-width: 980px) {
+// }
+
+.icon-close-x-wrapper {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.loading-page-wrapper {
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.loading-page {
+  height: 95px;
+  width: 95px;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+.loading-button {
+  height: 15px;
+  width: 15px;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform: scaleX(-1) rotate(360deg);
+    }
+    to {
+        transform: scaleX(-1) rotate(0deg);
+    }
+}

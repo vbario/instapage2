@@ -1,0 +1,53 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "@supercharge/request-ip": "^1.1.2",
+    "axios": "^0.21.1",
+    "child-process-promise": "^2.2.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "firebase": "^8.2.5",
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0",
+    "form-data": "^4.0.0",
+    "fs": "0.0.1-security",
+    "googleapis": "^126.0.0",
+    "https": "^1.0.0",
+    "ics": "^2.27.0",
+    "ip": "^1.1.5",
+    "mailchimp-api-v3": "^1.15.0",
+    "mandrill-api": "^1.0.45",
+    "ndjson": "^2.0.0",
+    "ndjson-parse": "^1.0.4",
+    "node": "^15.8.0",
+    "node-fetch": "^2.7.0",
+    "node-mandrill": "^1.0.1",
+    "nodemailer": "^6.9.8",
+    "openai": "^3.3.0",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "querystring": "^0.2.1",
+    "request": "^2.88.2",
+    "sanitize-html": "^2.12.1",
+    "simple-oauth2": "^3.4.0",
+    "stripe": "^8.133.0",
+    "unsplash-js": "^7.0.19"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
