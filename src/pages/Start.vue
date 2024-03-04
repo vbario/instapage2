@@ -1,5 +1,5 @@
 <template>
-  <div class="w100p df fdc aic start-wrapper posrel">
+  <div class="w100p df fdc aic start-wrapper posrel" :class="{'mt20': !showClose}">
     <div class="email-sent-popup" v-if="flashingRecoveryEmailSent">
       <h2>Check your email</h2>
       <p class="mt10">Instructions for resetting your password was sent to {{email}}.</p>
@@ -8,10 +8,11 @@
       <img class="header-logo" src="../../static/images/pushable/pushable-logo-5.png"/>
       <h1 class="logo-font text-primary-color">pushable</h1>
     </div> -->
+    <img v-if="showClose" @click="$emit('hideLogin')" src="../../static/brand-icons/x-close.svg" class="x-close"></i>
+    <img v-else @click="goTo('/')" class="go-back curp" src="../../static/images/back.svg" >
 
-
-    <h2 class="text-dark mt20" v-if="loginMode == 'register'">Get an instant Instapage account</h2>
-    <h2 class="text-dark mt20" v-if="loginMode == 'login'">
+    <h2 class="text-dark" v-if="loginMode == 'register'">Get an Instapage account</h2>
+    <h2 class="text-dark" v-if="loginMode == 'login'">
       {{showFullLoginOptions ? 'Welcome back ' + email + '!' : 'Welcome back to Instapage'}}
     </h2>
     <div class="w100p login-inputs df fdc mt20" v-if="loginMode == 'login'">
@@ -172,7 +173,7 @@ export default {
       flashingRecoveryEmailSent: false
     }
   },
-  props: [],
+  props: ['showClose'],
   components: {
   },
   methods: {
@@ -232,8 +233,9 @@ export default {
         password: this.password,
       }).then((res) => {
         console.log('res', res)
-        if (res == 'ok') {
-          router.push('/')
+        this.$emit('hideLogin')
+        // if (res == 'ok') {
+          // router.push('/')
           // let tryToGoToMyPage = () => {
           //   console.log('tryToGoToMyPage', this.$store.getters['AUTH.myInfo'])
           //   let myUsername = this.$store.getters['AUTH.myInfo'] && this.$store.getters['AUTH.myInfo'].displayName
@@ -252,8 +254,8 @@ export default {
           //   }
           // }
           // tryToGoToMyPage()
-        }
-        this.loggingIn = false
+        // }
+        // this.loggingIn = false
         let message = res.message
         this.authError = res.message
       }).catch((error) => {
@@ -270,6 +272,7 @@ export default {
         email: this.email,
         password: this.password
       }).then((res) => {
+        this.$emit('hideLogin')
         console.log('res', res)
         this.loggingIn = false
         let message = res.message
@@ -289,11 +292,11 @@ export default {
             }
           } else {
             setTimeout(() => {
-              tryToGoToMyPage()
+              // tryToGoToMyPage()
             }, 500)
           }
         }
-        tryToGoToMyPage()
+        // tryToGoToMyPage()
       }).catch((error) => {
         console.log('error caught')
         this.loggingIn = false
@@ -651,5 +654,17 @@ export default {
     &:hover {
       opacity: 0.3;
     }
+  }
+
+  .x-close {
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+  .go-back {
+    position: fixed;
+    left: 30px;
+    top: 20px;
+    width: 20px;
   }
 </style>

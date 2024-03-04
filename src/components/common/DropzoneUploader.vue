@@ -16,7 +16,7 @@
     </vue-dropzone>
     <div class="dropzone-overlay df fdc jcc aic">
       <img class="doc-file" src="../../../static/instapage/document-3.png">
-      <p class="dropzone-text mt10">Drag or <span>upload</span> {{textOverride ? textOverride : 'image'}}</p>
+      <p class="dropzone-text mt10 tac">Drag or <span>upload</span> {{textOverride ? textOverride : 'image'}}</p>
       <p class="support-line">Supports .docx</p>
     </div>
   </div>

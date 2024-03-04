@@ -18,6 +18,11 @@
         @publishPage="publishPage"
         @unpublishPage="unpublishPage"
         @refreshPage="refreshPage"/>
+    <div v-if="showLogin" class="login-wrapper">
+      <div>
+        <Start showClose="true" @hideLogin="setHideLogin"/>
+      </div>
+    </div>
     <div class="f1 df fdc jcsb aic w100p posrel app-side">
       <Login v-if="mode == 'login'" @clearPage="clearPage" />
       <Editor
@@ -61,6 +66,7 @@ export default {
   name: 'AppWrap',
   data () {
     return {
+      showLogin: false,
       pageContent: '',
       pageCreated: '',
       ownerId: '',
@@ -80,6 +86,12 @@ export default {
     Privacy
   },
   methods: {
+    setShowLogin () {
+      this.showLogin = true
+    },
+    setHideLogin () {
+      this.showLogin = false
+    },
     clearPage () {
        this.pageContent = ''
        this.pageCreated = ''
@@ -95,22 +107,6 @@ export default {
       this.ownerId = res.ownerId
       this.pagePublic = res.published
     },
-    savePage () {
-      this.$store.dispatch('AUTH.savePage', {
-        htmlString: this.pageContent,
-        pageId: this.$route.params.pageid,
-        pageCode: this.$route.params.pagecode
-      }).then((res) => {
-        console.log('res', res)
-        if (res.data.status == 400) {
-          this.flashSaved('Error saving: ' + res.data.message)
-        } else {
-          console.log('flash copied')
-          this.flashSaved()
-        }
-      })
-
-    },
     refreshPage () {
       let pageId = this.$route.params.pageid
       this.$store.dispatch('AUTH.getPage', pageId).then((res) => {
@@ -119,37 +115,74 @@ export default {
         }
       })
     },
+    savePage () {
+      if (this.$store.getters['AUTH.email']) {
+        this.$store.dispatch('AUTH.savePage', {
+          htmlString: this.pageContent,
+          pageId: this.$route.params.pageid,
+          pageCode: this.$route.params.pagecode
+        }).then((res) => {
+          console.log('res', res)
+          if (res.data.status == 400) {
+            this.flashSaved('Error saving: ' + res.data.message)
+          } else {
+            console.log('flash copied')
+            this.flashSaved()
+            this.refreshPage()
+            this.$store.dispatch('AUTH.getMyPages', {})
+          }
+        })
+      } else {
+        console.log('prompt login')
+        this.setShowLogin()
+      }
+    },
     publishPage () {
-      this.$store.dispatch('AUTH.publishPage', {
-        htmlString: this.pageContent,
-        pageId: this.$route.params.pageid,
-        pageCode: this.$route.params.pagecode
-      }).then((res) => {
-        console.log('res', res)
-        if (res.data.status == 400) {
-          this.flashSaved('Error publishing: ' + res.data.message)
-        } else {
-          console.log('flash copied')
-          this.flashSaved('Published!')
-          this.refreshPage()
-        }
-      })
+      if (this.$store.getters['AUTH.email']) {
+        this.$store.dispatch('AUTH.publishPage', {
+          htmlString: this.pageContent,
+          pageId: this.$route.params.pageid,
+          pageCode: this.$route.params.pagecode
+        }).then((res) => {
+          console.log('res', res)
+          if (res.data.status == 400) {
+            this.flashSaved('Error publishing: ' + res.data.message)
+          } else {
+            console.log('flash copied')
+            this.flashSaved('Published!')
+            this.refreshPage()
+            this.$store.dispatch('AUTH.getMyPages', {})
+          }
+        })
+      } else {
+        console.log('prompt login')
+        this.setShowLogin()
+      }
     },
     unpublishPage () {
-      this.$store.dispatch('AUTH.unpublishPage', {
-        htmlString: this.pageContent,
-        pageId: this.$route.params.pageid,
-        pageCode: this.$route.params.pagecode
-      }).then((res) => {
-        console.log('res', res)
-        if (res.data.status == 400) {
-          this.flashSaved('Error unpublishing: ' + res.data.message)
-        } else {
-          console.log('flash copied')
-          this.flashSaved('Unpublished!')
-          this.refreshPage()
-        }
-      })
+      if (this.$store.getters['AUTH.email']) {
+        this.$store.dispatch('AUTH.unpublishPage', {
+          htmlString: this.pageContent,
+          pageId: this.$route.params.pageid,
+          pageCode: this.$route.params.pagecode
+        }).then((res) => {
+          console.log('res', res)
+          if (res.data.status == 400) {
+            this.flashSaved('Error unpublishing: ' + res.data.message)
+          } else {
+            console.log('flash copied')
+            this.flashSaved('Unpublished!')
+            this.refreshPage()
+            this.$store.dispatch('AUTH.getMyPages', {})
+          }
+        })
+      } else {
+        console.log('prompt login')
+        this.setShowLogin()
+      }
+    },
+    getMyPages () {
+
     },
     flashSaved (message) {
       this.savedMessageOverride = message
@@ -392,6 +425,28 @@ export default {
     .copied {
       display: block;
       /*display: none;*/
+    }
+  }
+
+  .login-wrapper {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: #00000044;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div {
+      width: 100%;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 20px;
+      padding-top: 10px;
+      border-radius: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
     }
   }
 

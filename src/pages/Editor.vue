@@ -142,4 +142,10 @@ export default {
   .h_ {
     height: 100%;
   }
+  @media (max-width: 420px) {
+    .whole-page {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
 </style>

@@ -2321,6 +2321,18 @@ const AUTH = {
     var updateInventoryCount = firebase.functions().httpsCallable('updateInventoryCount')
     updateInventoryCount(item)
   },
+  getMyPages: (state, item) => {
+    console.log('=> getMyPages')
+    let getMyPages = async () => {
+      console.log('=> getMyPages 2')
+      let uid = firebase.auth().currentUser.uid
+      let _myPages = await firebaseInstance.database().ref('/myHtmlPages/' + (uid || 'f')).once('value')
+      let myPages = _myPages.val() || {}
+      console.log('myPages (user):', myPages)
+      state.commit('AUTH.SET_MY_PAGES', myPages)
+    }
+    getMyPages()
+  },
   setPreOrderDetailsAndPay: (state, item) => {
 
     return new Promise(async (resolve, reject) => {

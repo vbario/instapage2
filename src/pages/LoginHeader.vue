@@ -42,7 +42,7 @@
           <p v-if="!$store.getters['AUTH.email']" class="login-button curp text-dark" @click="goTo('/start?mode=login')">login</p>
         </div>
       </div>
-      <div class="menu posrel menu-responsive" v-if="($route.name !== 'EditorPage') && !$store.getters['AUTH.email']">
+      <div class="menu posrel menu-responsive" v-if="false">
         <img class="menu-button" src="../../static/instapage/menu.svg" @click="openUserMenu">
         <div v-if="showUserMenu" class="open-menu df fdc dn" v-click-outside:delay="closeUserMenu">
           <button class="button-1" @click="goToEditor()">{{$store.getters['AUTH.email'] ? 'new page' : 'get started'}}</button>
@@ -364,8 +364,8 @@ export default {
   }
   @media (max-width: 420px) {
     .header-wrapper {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 20px;
+      padding-right: 20px;
       .header-inner {
         border-radius: 0;
       }

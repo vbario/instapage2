@@ -189,4 +189,16 @@ export default {
       margin-top: 30px;
     }
   }
+  @media (max-width: 350px) {
+    .hero-wrapper-2 {
+      margin-top: 30px;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .res-low {
+      font-size: 26px;
+      line-height: 1em;
+    }
+  }
 </style>
